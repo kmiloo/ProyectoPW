@@ -19,14 +19,61 @@ body{
     background: white;
     height: 100%;
     box-shadow: 7px -1px 12px rgba(0, 0, 0, 0.11);
-}
-.letras-menu{
-    padding: 5%;
+    display: flex;
+    flex-direction: column;
 }
 .logo{
-    height: 100px;
-    width: 100px;
+    height: 140px;
+    width: 140px;
     object-fit: cover;
+}
+.inicio div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inicio li{
+    height: 70px;
+    background-color: white;
+    
+    
+}
+.inicio li a{
+    list-style: none;
+    text-decoration: none;
+    color: var(--text-color);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.inicio li a:hover{
+    background-color: #EEF2F5;
+}
+
+
+
+.logout li{
+    height: 70px;
+    background-color: white;
+}
+.logout li a span{
+    padding-left: 5%;
+}
+.logout li a{
+    list-style: none;
+    text-decoration: none;
+    color: var(--text-color);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logout li a:hover{
+    background-color: #EEF2F5;
 }
 /* MENU LATERAL*/
 /* MENU LATERAL*/
@@ -38,8 +85,10 @@ body{
 .arriba{
     display: flex;
     height: 85px;
-    justify-content: space-around;
-    padding: 3%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    
     /* position: absolute;
     top: 50%;
     left: 50%;
@@ -65,7 +114,6 @@ body{
 .contenedores-tareas {
     display: flex;
     
-
 }
 
 .contenedores-tareas > .tareas {
@@ -83,16 +131,12 @@ body{
 }
 
 
-
-
-
-
 /* CARTAS DENTRO DE TAREAS*/
 /* CARTAS DENTRO DE TAREAS*/
 /* CARTAS DENTRO DE TAREAS*/
 .carta-tarea{
     background-color: white;
-    border-radius: 8px;
+    border-radius: 20px;
     box-shadow: 7px -1px 12px rgba(0, 0, 0, 0.11);
 }
 
@@ -165,6 +209,10 @@ body{
 @media (max-width: 767px) {
     body {
         flex-direction: column;
+        width: 100%;
+    }
+    main{
+        flex-direction: column;
     }
     .menu-contenido{
         display: flex;
@@ -172,14 +220,15 @@ body{
 
     .menu {
         width: 100%; /* Ocupa todo el ancho disponible */
-        height: 0%;
+        
     }
 
     .contenedores-tareas {
-        padding: 5%;
+        display: flex;
+        flex-direction: column;
     }
 
-    .contenedores-tareas > .tareas {
-        width: 100%; /* Ocupa todo el ancho disponible */
-    }
+    /* .contenedores-tareas > .tareas {
+         
+    } */
 }

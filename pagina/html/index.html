@@ -10,55 +10,72 @@
 </head>
 <body>
 
+    <!-- ================= SIDE VAR ======================-->
     <nav class="menu">
-        <ul class="menu-contenido">
-            <li>
+
+        <!-- ================= ZONA DE INICIO ======================-->
+        <div class="inicio">
+            <div>
                 <img src="../img/LOGO.png" alt="TR" class="logo">
+            </div>
+            <li>
+                <a href="#">
+                    <span>Inicio</span>
+                </a>
             </li>
-            <li class="letras-menu"><a href="#">Inicio</a></li>
-            <li class="letras-menu"><a href="#">Inicio</a></li>
-            <li class="letras-menu"><a href="#">Configuraciones</a></li>
-            
-        </ul>
+            <li>
+                <a href="#">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span>Settings</span>
+                </a>
+            </li>
+        </div>
+
+        <!-- ================= ZONA DE LOGOUT ======================-->
+        <div class="logout">
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Log Out</span>
+                </a>
+            </li>
+        </div>
     </nav>
     
 
     <main>
+
+
+        <!-- ================= ZONDA DE ARRIBA DE CONTENEDORES TAREAS ======================-->
         <div class="arriba">
-           
             <div>
-                buscar
+                <p>Gestor de Tareas</p>
             </div>
             <div class="iconos-arriba">
                 <li>
                     <a href="#" ><i class="fa-regular fa-user"></i></a>
                     <a href="#" ><i class="fa-regular fa-user"></i></a>
-                    <a href="#" ><i class="fa-regular fa-user"></i></a>
                 </li>
-                
-                
             </div>
-            
         </div>
-        
+ 
 
-
-
-
-
+        <!-- ================= CONTENEDORES DE TAREAS ======================-->
         <div class="contenedores-tareas">
-                
+            <!-- ================= CONTENEDOR POR HACER ======================-->
             <div class="tareas">
                 
-    
-    
                 <div class="icon">   
                     <p>Por hacer</p>
                     <a href="#"><i class="fa-solid fa-plus"></i></a>
     
                 </div>
     
-                
+                <!-- ================= CARTAS DE TAREAS (mejorar)======================-->
                 <div class="carta-tarea">
                     
                     <div class="carta-header">TAREA1</div>
@@ -72,6 +89,7 @@
                         
                     </div>
                 </div>
+                <!-- ================= OTRAS CARTA ======================-->
                 <div class="carta-tarea">
                     <div class="carta-header">TAREA2</div>
                     <div class="card-body text-success">
@@ -83,48 +101,54 @@
                         <a href="#"><i class="fas fa-edit"></i></a>
                     </div>
                 </div>
-                
-    
-    
             </div>
         
-    
-    
-            <div class="tareas">
-                
+            <!-- ================= CONTENEDOR EN PROCESO======================-->
+            <div class="tareas">  
                 <div class="icon"> 
                     <p>En Proceso</p>  
-    
-    
                     <a href="#"><i class="fa-solid fa-plus"></i></a>
-    
                 </div>
-    
+                <!-- ================= UNA CARTA ======================-->
+                <div class="carta-tarea">
+                    
+                    <div class="carta-header">TAREA1</div>
+                    <div class="card-body text-success">
+                        <h5 class="carta-titulo">Success card title</h5>
+                        <p class="carta-texto">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                    <div class="carta-footer">
+                        Footer 
+                        <a href="#"><i class="fas fa-edit"></i></a>
+                        
+                    </div>
+                </div>
             </div>
     
     
     
-    
+            <!-- ================= CONTENEDOR TERMINADO======================-->
             <div class="tareas">
-    
+
                 <div class="icon">   
-    
                     <p>Terminado</p>
-    
                     <a href="#"><i class="fa-solid fa-plus"></i></a>
-    
-                    
-    
+                </div>
+                <!-- ================= UNA CARTA ======================-->
+                <div class="carta-tarea">
+
+                    <div class="carta-header">TAREA1</div>
+                    <div class="card-body text-success">
+                        <h5 class="carta-titulo">Success card title</h5>
+                        <p class="carta-texto">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                    <div class="carta-footer">
+                        Footer 
+                        <a href="#"><i class="fas fa-edit"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
-
-
     </main>
-    
-    
-
-    
-
 </body>
 </html>
