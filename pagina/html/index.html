@@ -6,9 +6,30 @@
     <title>Document</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    
 </head>
 <body>
+
+    <!-- ================= MENU DESPLEGABLE ======================-->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-modal"><a href="#"><i class="fa-solid fa-x fa-3x"></i></a></span>
+            <div>
+                <div class="carta-headerr">
+                    <input type="text" id="titulo" placeholder="Título">
+                </div>
+                <div class="card-body">
+                    <textarea id="descripcion" placeholder="Descripción"></textarea>
+                </div>
+                <div class="carta-footerr">
+                    <button id="guardar">Guardar</button>
+                </div>
+
+            </div>
+            
+        </div>
+    </div>
+    
+    
 
     <!-- ================= SIDE VAR ======================-->
     <nav class="menu">
@@ -57,7 +78,7 @@
             </div>
             <div class="iconos-arriba">
                 <li>
-                    <a href="#" ><i class="fa-regular fa-user"></i></a>
+                    <a href="../html/acount.html" ><i class="fa-regular fa-user"></i></a>
                 </li>
             </div>
         </div>
@@ -67,87 +88,95 @@
         <div class="contenedores-tareas">
             <!-- ================= CONTENEDOR POR HACER ======================-->
             <div class="tareas">
-                
-                <div class="icon">   
-                    <p>Por hacer</p>
-                    <a href="#"><i class="fa-solid fa-plus"></i></a>
-    
-                </div>
-    
-                <!-- ================= CARTAS DE TAREAS (mejorar)======================-->
-                <div class="carta-tarea">
-                    
-                    <div class="carta-header">TAREA1</div>
-                    <div class="card-body text-success">
-                        <h5 class="carta-titulo">Success card title</h5>
-                        <p class="carta-texto">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+                <div class="por-hacer">
+
+                    <!-- ================= header en tarea======================-->
+                    <div class="por-hacer-header">
+                        <p>Por hacer</p>
+                        <a href="#"><i class="fa-solid fa-plus"></i></a>
                     </div>
-                    <div class="carta-footer">
-                        Footer 
-                        <a href="#"><i class="fas fa-edit"></i></a>
-                        
+
+                    <!-- ================= CARTAS DE TAREAS (mejorar)======================-->
+                    <div class="carta-tarea" draggable="true">
+                        <a href="#"><i class="fa-solid fa-x" ></i></a>
+                        <div class="carta-header">
+                            <h5 class="carta-titulo">Success card title</h5>
+                            <a href="#"><i class="fas fa-edit"></i></a>
+                        </div>
+                        <div class="carta-texto">
+                            <p class="carta-texto">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                        <div class="carta-footer">
+                            <i class="fa-solid fa-circle-user"></i>
+                        </div>
                     </div>
-                </div>
-                <!-- ================= OTRAS CARTA ======================-->
-                <div class="carta-tarea">
-                    <div class="carta-header">TAREA2</div>
-                    <div class="card-body text-success">
-                        <h5 class="carta-titulo">Success card title</h5>
-                        <p class="carta-texto">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                    <div class="carta-footer">
-                        Footer 
-                        <a href="#"><i class="fas fa-edit"></i></a>
-                    </div>
+
                 </div>
             </div>
         
+
+
+
+
             <!-- ================= CONTENEDOR EN PROCESO======================-->
             <div class="tareas">  
-                <div class="icon"> 
-                    <p>En Proceso</p>  
-                    <a href="#"><i class="fa-solid fa-plus"></i></a>
-                </div>
-                <!-- ================= UNA CARTA ======================-->
-                <div class="carta-tarea">
+
+                <!-- ================= header proceso ======================-->
+                <div class="en-proceso">
                     
-                    <div class="carta-header">TAREA1</div>
-                    <div class="card-body text-success">
-                        <h5 class="carta-titulo">Success card title</h5>
-                        <p class="carta-texto">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <div class="en-proceso-header">
+                        <p>En Proceso</p>
+                        <a href="#"><i class="fa-solid fa-plus"></i></a>
                     </div>
-                    <div class="carta-footer">
-                        Footer 
-                        <a href="#"><i class="fas fa-edit"></i></a>
-                        
+
+                    <!-- ================= UNA CARTA ======================-->
+                    <div class="carta-tarea" draggable="true">
+                        <a href="#"><i class="fa-solid fa-x" ></i></a>
+                        <div class="carta-header">
+                            <h5 class="carta-titulo">Success card title</h5>
+                            <a href="#"><i class="fas fa-edit"></i></a>
+                        </div>
+                        <div class="carta-texto">
+                            <p class="carta-texto">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                        <div class="carta-footer">
+                            <i class="fa-solid fa-circle-user"></i>
+                        </div>
                     </div>
+
                 </div>
             </div>
+
     
     
     
             <!-- ================= CONTENEDOR TERMINADO======================-->
             <div class="tareas">
-
-                <div class="icon">   
-                    <p>Terminado</p>
-                    <a href="#"><i class="fa-solid fa-plus"></i></a>
-                </div>
-                <!-- ================= UNA CARTA ======================-->
-                <div class="carta-tarea">
-
-                    <div class="carta-header">TAREA1</div>
-                    <div class="card-body text-success">
-                        <h5 class="carta-titulo">Success card title</h5>
-                        <p class="carta-texto">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <div class="terminado">
+                    <div class="terminado-header">
+                        <p>Terminado</p>
+                        <a href="#"><i class="fa-solid fa-plus"></i></a>
                     </div>
-                    <div class="carta-footer">
-                        Footer 
-                        <a href="#"><i class="fas fa-edit"></i></a>
+
+                    <!-- ================= UNA CARTA ======================-->
+                    <div class="carta-tarea" draggable="true">
+                        <a href="#"><i class="fa-solid fa-x" ></i></a>
+                        <div class="carta-header">
+                            <h5 class="carta-titulo">Success card title</h5>
+                            <a href="#"><i class="fas fa-edit"></i></a>
+                        </div>
+                        <div class="carta-texto">
+                            <p class="carta-texto">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                        <div class="carta-footer">
+                            <i class="fa-solid fa-circle-user"></i>
+                        </div>
                     </div>
-                </div>
+                
             </div>
         </div>
+        <script src="../JS/main.js"></script>
     </main>
 </body>
 </html>
