@@ -43,6 +43,7 @@ guardarButton.addEventListener("click", () => {
         <p class="carta-texto">${descripcion}</p>
       </div>
       <div class="carta-footer">
+        <i class="fa-solid fa-circle-user"></i>
       </div>
     `;
 
@@ -98,3 +99,34 @@ document.addEventListener("click", (e) => {
   });
   
  
+
+
+
+// Añade un evento clic a los iconos de edición en las cartas
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("fas") && e.target.classList.contains("fa-edit")) {
+    const carta = e.target.closest(".carta-tarea");
+    if (carta) {
+      const tituloCarta = carta.querySelector(".carta-titulo");
+      const descripcionCarta = carta.querySelector(".carta-texto");
+
+      // Abre el formulario de edición con los datos actuales de la carta
+      modal.style.display = "flex";
+      tituloInput.value = tituloCarta.textContent;
+      descripcionTextarea.value = descripcionCarta.textContent;
+
+      // eliminar espacios vacios
+      tituloInput.value = tituloCarta.textContent.trim();
+      descripcionTextarea.value = descripcionCarta.textContent.trim();
+
+      // Establece una función para actualizar la carta cuando se presione "Guardar"
+      guardarButton.onclick = () => {
+        tituloCarta.textContent = tituloInput.value;
+        descripcionCarta.textContent = descripcionTextarea.value;
+        modal.style.display = "none"; // Cierra el formulario de edición
+      };
+    }
+  }
+});
+
+
