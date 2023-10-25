@@ -4,6 +4,7 @@
     margin: 0%;
     text-decoration: none;
     list-style: none;
+    color: var(--text-color);
 }
 
 /* COLOR DE FONDO */
@@ -141,7 +142,13 @@ body{
     
 
 }
-.modal span{
+.carta-footerr{
+    padding-bottom: 2%;
+}
+.card-body{
+    padding-top: 2%;
+}
+.modal .close{
     width: 100%;
     display: flex;
     flex-direction: row-reverse;
@@ -153,6 +160,7 @@ body{
 }
 .modal input{
     width: 100%;
+    
 }
 .modal textarea{
     width: 100%!important;
@@ -186,6 +194,7 @@ body{
 .por-hacer-header{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 
@@ -193,21 +202,25 @@ body{
 .contenedores-tareas .tareas .en-proceso{
     display: flex;
     flex-direction: column;
+    
 }
 
 .en-proceso-header{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 
 .contenedores-tareas .tareas .terminado{
     display: flex;
     flex-direction: column;
+    
 }
 .terminado-header{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 /* CARTAS DENTRO DE TAREAS*/

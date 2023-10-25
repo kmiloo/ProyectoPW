@@ -1,16 +1,19 @@
-body {
+*{
     font-family: Arial, sans-serif;
-    background-color: #FFFFFF;
     margin: 0;
     padding: 0;
+}
+body{
+    display: flex;
+    justify-content: center;
+    background-color: #FFFFFF;
 }
 
 main{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 25%;
-    margin-right: 25%;
+    
 }
 .icono{
     display: flex;
@@ -20,27 +23,43 @@ main{
     background-color: white;
     padding-bottom: 5%;
     padding-top: 5%;
+    height: 150px;
     
 }
 .icono p{
     color: white;
     width: 150px;
 }
-.icono i{
-    height: 150px;
+.icono .fa-regular{
+    height: 100%;
     width: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.flecha{
+    width: 150px;
+    height: 100%;
+    display: flex;
+    align-items: center;
     
 }
+
 .icono a{
-    background-color: #EEF2F5;
     border-radius: 50%;
     color: var(--text-color);
     text-decoration: none;
+    background-color: #EEF2F5;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
+.icono a:hover{
+    background-color: #e3e8ec;
+}
 
 
 .container {
@@ -78,14 +97,16 @@ button {
     border-radius: 4px;
     cursor: pointer;
     margin-top: 10px;
-    width: 25%;
+    width: 35%;
    
 }
 
 button:hover {
-    background-color: #555;
+    background-color: #e3e8ec;
 }
-
+h2{
+    padding-bottom: 4%;
+}
 @media (max-width: 767px) {
     button {
         width: 100%;

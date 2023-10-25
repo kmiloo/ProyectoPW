@@ -4,6 +4,7 @@ const modal = document.getElementById("modal");
 const closeModalButton = document.getElementById("close-modal");
 const tituloInput = document.getElementById("titulo");
 const descripcionTextarea = document.getElementById("descripcion");
+const asignado = document.getElementById("asignado");
 const guardarButton = document.getElementById("guardar");
 const contenedores = document.querySelectorAll(".tareas");
 let currentContenedor = null; // Rastrea el contenedor actual
@@ -16,7 +17,7 @@ addButtons.forEach((button, index) => {
     // Restablecer el formulario
     tituloInput.value = "";
     descripcionTextarea.value = "";
-
+    asignado.value = "";
     // Rastrear el contenedor actual
     currentContenedor = contenedores[index];
   });
@@ -24,7 +25,11 @@ addButtons.forEach((button, index) => {
 
 // Manejar la acción de guardar
 guardarButton.addEventListener("click", () => {
-  if (currentContenedor) {
+  if(asignado.value=="" || descripcionTextarea.value == "" || tituloInput.value == ""){
+    alert("Por favor Complete todos los campos");
+    return;
+  }
+  else if (currentContenedor) {
     let titulo = tituloInput.value;
     let descripcion = descripcionTextarea.value;
 
@@ -32,7 +37,7 @@ guardarButton.addEventListener("click", () => {
     const newCard = document.createElement("div");
     newCard.classList.add("carta-tarea");
     newCard.draggable = true;
-
+                        
     newCard.innerHTML = `
       <div class="carta-header">
         <a href="#"><i class="fa-solid fa-x" ></i></a>
