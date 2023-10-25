@@ -25,11 +25,8 @@ addButtons.forEach((button, index) => {
 
 // Manejar la acción de guardar
 guardarButton.addEventListener("click", () => {
-  if(asignado.value=="" || descripcionTextarea.value == "" || tituloInput.value == ""){
-    alert("Por favor Complete todos los campos");
-    return;
-  }
-  else if (currentContenedor) {
+
+  if (currentContenedor) {
     let titulo = tituloInput.value;
     let descripcion = descripcionTextarea.value;
 
