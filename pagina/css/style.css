@@ -117,7 +117,7 @@ body{
 
 
 /* menu desplegable */
-.modal{
+.modal,.modal2{
     background: white;
     width: 100%;
     height: 100%;
@@ -131,7 +131,7 @@ body{
     backdrop-filter: blur(15px);
     background-color: rgba(0, 0, 0, 0.2);
 }
-.modal-content{
+.modal-content,.modal-content2{
     display: flex;
     flex-direction: column;
     background-color: #e3e8ec;
@@ -142,27 +142,27 @@ body{
     
 
 }
-.carta-footerr{
+.carta-footerr,.carta-footerr2{
     padding-bottom: 2%;
 }
-.card-body{
+.card-body,.card-body2{
     padding-top: 2%;
 }
-.modal .close{
+.modal .close,.modal2 .close2{
     width: 100%;
     display: flex;
     flex-direction: row-reverse;
     margin-right: 5%;
     margin-top: 2%;
 }
-.modal a{
+.modal a,.modal2 a{
     color: var(--text-color);
 }
-.modal input{
+.modal input,.modal2 input{
     width: 100%;
     
 }
-.modal textarea{
+.modal textarea,.modal2 textarea{
     width: 100%!important;
     min-height: 150px;
     max-height: 215px;
@@ -312,7 +312,7 @@ body{
     }
 
     .menu {
-        width: 100%; /* Ocupa todo el ancho disponible */
+        width: 100%;
         
     }
 

@@ -2,10 +2,20 @@
 const addButtons = document.querySelectorAll(".fa-plus");
 const modal = document.getElementById("modal");
 const closeModalButton = document.getElementById("close-modal");
+
 const tituloInput = document.getElementById("titulo");
 const descripcionTextarea = document.getElementById("descripcion");
 const asignado = document.getElementById("asignado");
 const guardarButton = document.getElementById("guardar");
+const closeModalButton2 = document.getElementById("close-modal2");
+
+const modal2 = document.getElementById("modal2");
+const tituloInput2 = document.getElementById("titulo2");
+const descripcionTextarea2 = document.getElementById("descripcion2");
+const asignado2 = document.getElementById("asignado2");
+const guardarButton2 = document.getElementById("guardar2");
+
+
 const contenedores = document.querySelectorAll(".tareas");
 let currentContenedor = null; // Rastrea el contenedor actual
 
@@ -64,6 +74,10 @@ guardarButton.addEventListener("click", () => {
 closeModalButton.addEventListener("click", () => {
   modal.style.display = "none";
 });
+// Manejar el cierre del formulario modal
+closeModalButton2.addEventListener("click", () => {
+  modal2.style.display = "none";
+});
 
 // Manejar el movimiento de cartas entre contenedores
 contenedores.forEach((contenedor) => {
@@ -113,22 +127,20 @@ document.addEventListener("click", (e) => {
       const descripcionCarta = carta.querySelector(".carta-texto");
 
       // Abre el formulario de edición con los datos actuales de la carta
-      modal.style.display = "flex";
-      tituloInput.value = tituloCarta.textContent;
-      descripcionTextarea.value = descripcionCarta.textContent;
+      modal2.style.display = "flex";
+      tituloInput2.value = tituloCarta.textContent;
+      descripcionTextarea2.value = descripcionCarta.textContent;
 
       // eliminar espacios vacios
-      tituloInput.value = tituloCarta.textContent.trim();
-      descripcionTextarea.value = descripcionCarta.textContent.trim();
+      tituloInput2.value = tituloCarta.textContent.trim();
+      descripcionTextarea2.value = descripcionCarta.textContent.trim();
 
       // Establece una función para actualizar la carta cuando se presione "Guardar"
-      guardarButton.onclick = () => {
-        tituloCarta.textContent = tituloInput.value;
-        descripcionCarta.textContent = descripcionTextarea.value;
-        modal.style.display = "none"; // Cierra el formulario de edición
+      guardarButton2.onclick = () => {
+        tituloCarta.textContent = tituloInput2.value;
+        descripcionCarta.textContent = descripcionTextarea2.value;
+        modal2.style.display = "none"; // Cierra el formulario de edición
       };
     }
   }
 });
-
-
