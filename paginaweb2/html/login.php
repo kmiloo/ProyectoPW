@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/login.css">
@@ -16,7 +17,9 @@
         <div class="container">
             
             <h2>Iniciar Sesión</h2>
-            <form class="login" action="../html/index.html">
+            <form class="login-form" method="post">
+
+
                 <div id="corre">
                     <label for="correo">Correo Electrónico:</label>
                     <input type="text" id="correo" name="correo" placeholder="tucorreo@ejemplo.com">
@@ -24,10 +27,14 @@
     
                 <label for="contrasena">Contraseña:</label>
                 <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña">
+
+                <?php 
+                    include('../php/login_user.php');
+                ?>
     
-                <button type="button"onclick="ValidarCorreo()" >Login</button>
+                <button type="submit" name="login">Login</button>
             </form>
-            <p class="par">¿No tienes una cuenta? <a href="../html/registro.html">Registrate aquí</a></p>
+            <p class="par">¿No tienes una cuenta? <a href="../html/registro.php">Registrate aquí</a></p>
             
         </div>
     </main>

@@ -5,14 +5,14 @@ const closeModalButton = document.getElementById("close-modal");
 
 const tituloInput = document.getElementById("titulo");
 const descripcionTextarea = document.getElementById("descripcion");
-const asignado = document.getElementById("asignado");
+const correo = document.getElementById("correo");
 const guardarButton = document.getElementById("guardar");
 const closeModalButton2 = document.getElementById("close-modal2");
 
 const modal2 = document.getElementById("modal2");
 const tituloInput2 = document.getElementById("titulo2");
 const descripcionTextarea2 = document.getElementById("descripcion2");
-const asignado2 = document.getElementById("asignado2");
+const correo2 = document.getElementById("correo2");
 const guardarButton2 = document.getElementById("guardar2");
 
 
@@ -27,7 +27,7 @@ addButtons.forEach((button, index) => {
     // Restablecer el formulario
     tituloInput.value = "";
     descripcionTextarea.value = "";
-    asignado.value = "";
+    correo.value = "";
     // Rastrear el contenedor actual
     currentContenedor = contenedores[index];
   });
@@ -37,6 +37,13 @@ addButtons.forEach((button, index) => {
 guardarButton.addEventListener("click", () => {
 
   if (currentContenedor) {
+
+    if(tituloInput.value.trim()=="" || descripcionTextarea.value.trim()==""|| correo.value.trim()=="" ){
+      let aviso = document.createElement("div");
+      aviso.innerHTML = `<p style="color: red;"> Porfavor complete los campos</p>`;
+      let cont = document.querySelector(".modal-content");
+      cont.appendChild(aviso);
+    }
     let titulo = tituloInput.value;
     let descripcion = descripcionTextarea.value;
 
@@ -63,7 +70,7 @@ guardarButton.addEventListener("click", () => {
     currentContenedor.appendChild(newCard);
 
     // Cerrar el formulario modal
-    modal.style.display = "none";
+    modal.style.display = "flex";
 
     // Restablecer el contenedor actual
     currentContenedor = null;

@@ -1,5 +1,5 @@
 *{
-    font-family: Arial, sans-serif;
+    font-family: Verdana;
     margin: 0;
     padding: 0;
 }
@@ -28,7 +28,6 @@ main{
 }
 
 .container {
-    width: 100%;
     margin: 0 50px 3vw 50px;
     border-radius: 5px;
     padding: 5vh 5vw;
@@ -47,9 +46,9 @@ label {
     margin-bottom: 1vh;
 }
 
-.login label{
+.login-form label{
     font-weight: bold;
-    margin: 1vh 0 3vh 0;
+    margin: 1vh 0 2vh 0;
 }
 
 form{
@@ -57,9 +56,10 @@ form{
     flex-direction: column;
 }
 
+
 form input,select{
     padding: 15px;
-    margin-bottom: 2%;
+    
     background-color: white;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -69,19 +69,19 @@ form div{
     flex-direction: column;
 }
 
-button {
+button{
     background-color: #333;
     color: #FFFFFF;
     padding: 2.5vh;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 10px;
-    width: 100%;
+    margin-top: 6%;
+    width: 80vh;
    
 }
 
-button:hover {
+button:hover{
     transition: 0.2s;
     background-color: #b9c0c4;
     color: black;
