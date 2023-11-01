@@ -1,10 +1,14 @@
 *{
-    font-family: 'Sans', sans-serif;
+    font-family: Verdana;
     font-size: 20px;
     margin: 0%;
     text-decoration: none;
     list-style: none;
     color: var(--text-color);
+}
+
+h3{
+    padding-left: 15%;
 }
 
 /* COLOR DE FONDO */
@@ -179,11 +183,20 @@ body{
     display: flex;
     
 }
+.contenedores-tareas #porhacer{
+    background-color: #F5EEEE;
+}
+.contenedores-tareas #enproceso{
+    background-color: #F5F3EE;
+}
+.contenedores-tareas #terminado{
+    background-color: #E5F5EE;
+}
+
 
 .contenedores-tareas .tareas {
     margin-right: 5%; 
     padding: 3%; 
-    background-color: #EEF2F5; 
     box-shadow: 7px -1px 12px rgba(0, 0, 0, 0.11); 
     border-radius: 20px;
 }

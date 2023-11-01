@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tareas</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
@@ -13,26 +13,38 @@
     <div id="modal" class="modal">
         <div class="modal-content">
             <span class="close" ><a href="#" id="close-modal"><i class="fa-solid fa-x fa-3x"></i></a></span>
-            <div>
+
+            <form >
                 <div class="carta-headerr">
-                    <input type="text" id="titulo" placeholder="Título Tarea">
+                    <input type="text" id="titulo" name="titulo" placeholder="Título Tarea">
                 </div>
                 <div class="card-body">
-                    <textarea id="descripcion" placeholder="Descripción Tarea" autofocus="true" ></textarea>
+                    <textarea id="descripcion" name="descripcion" placeholder="Descripción Tarea" autofocus="true" ></textarea>
                 </div>
                 <div class="carta-footerr">
-                    <input type="email" id="asignado" placeholder="Correo">
+                    <input type="email" id="correo" name="email" placeholder="Correo">
                 </div>
-                    <button id="guardar">Guardar</button>
-            </div>
-            
+
+                <button type="submit" id="guardar" name="guardar"  >Guardar</button>
+                <!-- <button type="submit" id="guardar" name="guardar"  >Guardar</button> -->
+
+                
+                <!-- temporal -->
+                <!-- <?php 
+                    include('../php/registrar_tarea.php');
+                ?> -->
+            </form>
         </div>
     </div>
+    
+
+
+
 
     <!-- ================= MENU DESPLEGABLE2(para ediciones) ======================-->
     <div id="modal2" class="modal2">
         <div class="modal-content2">
-            <span class="close2" ><a href="#" id="close-modal2"><i class="fa-solid fa-x fa-3x"></i></a></span>
+            <span class="close2" ><a href="#"  id="close-modal2"><i class="fa-solid fa-x fa-3x"></i></a></span>
             <div>
                 <div class="carta-headerr2">
                     <input type="text" id="titulo2" >
@@ -78,7 +90,7 @@
         <!-- ================= ZONA DE LOGOUT ======================-->
         <div class="logout">
             <li>
-                <a href="../html/login.html">
+                <a href="../html/login.php">
                     <i class="fa-solid fa-right-from-bracket"></i>
                     <span>Log Out</span>
                 </a>
@@ -106,7 +118,7 @@
         <!-- ================= CONTENEDORES DE TAREAS ======================-->
         <div class="contenedores-tareas">
             <!-- ================= CONTENEDOR POR HACER ======================-->
-            <div class="tareas">
+            <div class="tareas" id="porhacer">
 
                 <div class="por-hacer">
 
@@ -139,10 +151,10 @@
 
 
             <!-- ================= CONTENEDOR EN PROCESO======================-->
-            <div class="tareas">  
+            <div class="tareas" id="enproceso">  
 
                 <!-- ================= header proceso ======================-->
-                <div class="en-proceso">
+                <div class="en-proceso" >
                     
                     <div class="en-proceso-header">
                         <p>En Proceso</p>
@@ -171,7 +183,7 @@
     
     
             <!-- ================= CONTENEDOR TERMINADO======================-->
-            <div class="tareas">
+            <div class="tareas" id="terminado">
                 <div class="terminado">
                     <div class="terminado-header">
                         <p>Terminado</p>
@@ -195,7 +207,8 @@
                 
             </div>
         </div>
-        <script src="../JS/main.js"></script>
+        
     </main>
+    <script src="../JS/main.js"></script>
 </body>
 </html>
