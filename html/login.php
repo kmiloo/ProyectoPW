@@ -10,7 +10,7 @@
 </head>
 <body>
     <main>
-        <div class="icono">
+        <div class="icono1">
             <img src="../img/LOGO.png" alt="TR" class="logo">
         </div>
 

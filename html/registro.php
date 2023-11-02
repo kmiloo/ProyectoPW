@@ -9,7 +9,7 @@
 </head>
 <body>
     <main>
-        <div class="icono">
+        <div class="icono1">
             <img src="../img/LOGO.png" alt="TR" class="logo">
         </div>
 
@@ -32,9 +32,9 @@
 
                 <select id="pais" name="pais" class="pais" >
                     <option value=""></option>
-                    <option value="es">Chile</option>
-                    <option value="mx">México</option>
-                    <option value="ar">Argentina</option>
+                    <option value="Chile">Chile</option>
+                    <option value="Méxic">México</option>
+                    <option value="Argentina">Argentina</option>
                 </select>
                 <?php 
                     include('../php/registrar_user.php');

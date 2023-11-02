@@ -28,7 +28,6 @@ main{
 }
 
 .container {
-    margin: 0 50px 3vw 50px;
     border-radius: 5px;
     padding: 5vh 5vw;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -100,9 +99,56 @@ button:hover{
     text-decoration: underline;
 }
 
+.icono{
+    display: flex;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.icono p{
+    color: white;
+    width: 150px;
+}
+.icono .fa-regular{
+    height: 100%;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flecha{
+    width: 150px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    
+}
+
+.icono a{
+    border-radius: 50%;
+    color: var(--text-color);
+    text-decoration: none;
+    background-color: #EEF2F5;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icono a:hover{
+    background-color: #e3e8ec;
+}
+
+
 
 @media (max-width: 767px) {
     button {
         width: 100%;
+    }
+    .icono{
+        width: none;
     }
 }

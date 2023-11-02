@@ -1,7 +1,7 @@
 <?php
 
 include ("conexion.php");
-
+session_abort();
 
 if(isset($_POST['login'])){
     if(strlen($_POST['correo']) >= 1 && strlen($_POST['contrasena']) >= 1){
@@ -15,7 +15,22 @@ if(isset($_POST['login'])){
 
         if($resultado && $fila = mysqli_fetch_assoc($resultado)){
             // El inicio de sesión es exitoso
-            //echo "SE INICIO SESION.";
+            $consulta_datos = "SELECT * FROM clientes WHERE correo = '$correo'";
+            $resultado_datos = mysqli_query($conex, $consulta);
+
+            session_start();
+            $_SESSION['nombre'] = $fila['nombre'];
+            $_SESSION['contrasena'] = $fila['contrasena'];
+            $_SESSION['correo'] = $fila['correo'];
+            $_SESSION['pais'] = $fila['pais'];
+            $estadoSesion = session_status();
+            echo 'Estado de la sesión: ' . $estadoSesion;
+
+
+            // $nombre = $_POST['nombre'];
+            // $correo = $_POST['correo'];
+            // $contrasena = $_POST['contrasena'];
+            // $pais = $_POST['pais'];
             echo "<script>window.location.href = 'index.php';</script>";
 
             exit();
@@ -32,10 +47,6 @@ if(isset($_POST['login'])){
         <?php
     }
 }
-
-
-
-
 
 
 ?>

@@ -30,9 +30,9 @@
 
                 
                 <!-- temporal -->
-                <!-- <?php 
+                <?php 
                     include('../php/registrar_tarea.php');
-                ?> -->
+                ?>
             </form>
         </div>
     </div>
@@ -75,6 +75,12 @@
                     <span>Inicio</span>
                 </a>
             </li>
+            <?php
+                session_start();
+                $estadoSesion = session_status();
+                echo 'Estado de la sesión: ' . $estadoSesion . $_SESSION['correo'];
+            ?>
+            
             <!-- <li>
                 <a href="#">
                     <span>About</span>
@@ -109,7 +115,7 @@
             </div>
             <div class="iconos-arriba">
                 <li>
-                    <a href="../html/acount.html" ><i class="fa-regular fa-user"></i></a>
+                    <a href="../html/account.php" ><i class="fa-regular fa-user"></i></a>
                 </li>
             </div>
         </div>
@@ -132,11 +138,11 @@
                     <div class="carta-tarea" draggable="true">
                         <a href="#"><i class="fa-solid fa-x" ></i></a>
                         <div class="carta-header">
-                            <h5 class="carta-titulo">Success card title</h5>
+                            <h5 class="carta-titulo">Realizar pagina web</h5>
                             <a href="#"><i id="edit" class="fas fa-edit"></i></a>
                         </div>
                         <div class="carta-texto">
-                            <p class="carta-texto">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <p class="carta-texto">Hacer pagina web de gestion de tareas colaborativa con basa de datos.</p>
                         </div>
                         <div class="carta-footer">
                             <i class="fa-solid fa-circle-user"></i>

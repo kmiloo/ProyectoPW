@@ -1,7 +1,7 @@
 <?php
 
 include ("conexion.php");
-
+//para guardar tareas
 if(isset($_POST['guardar'])){
     if(strlen($_POST['titulo']) >= 1 && strlen($_POST['descripcion']) >= 1 && strlen($_POST['email']) >= 1){
         $titulo = trim($_POST['titulo']);
@@ -43,4 +43,6 @@ if(isset($_POST['guardar'])){
         <?php
         }
 }
+
+//hacer para agregar tareas ya en la base de datos
 ?>
