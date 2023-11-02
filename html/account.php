@@ -19,13 +19,20 @@
             <p></p>
         </div>
 
+
+
+        <?php 
+            include('../php/login_user.php');
+        ?>
+
        
 
         <div class="container">
             <div class="contenedor">
                 <h2>Datos de la cuenta</h2>
-                <form>
-                    <?php
+                <form method="post" class="login-form">
+
+                    <?php//quitar
                         session_start();
                         $estadoSesion = session_status();
                         echo 'Estado de la sesión: ' . $estadoSesion . $_SESSION['correo'];
@@ -47,7 +54,7 @@
                         <option value="Argentina">Argentina</option>
                     </select>
         
-                    <button type="submit">Actualizar Datos</button>
+                    <button type="submit" name="actualizar">Actualizar Datos</button>
                 </form>
                 
                 

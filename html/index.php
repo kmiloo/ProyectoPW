@@ -75,7 +75,7 @@
                     <span>Inicio</span>
                 </a>
             </li>
-            <?php
+            <?php//quitar
                 session_start();
                 $estadoSesion = session_status();
                 echo 'Estado de la sesión: ' . $estadoSesion . $_SESSION['correo'];
