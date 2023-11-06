@@ -26,6 +26,7 @@ if (isset($_SESSION['id'])){
         } elseif ($id_estado == 3) {
             $contenedor = 3;
         }
+        
 
         // Genera el contenido de la carta de tarea con los datos de la base de datos
         echo '<div class="carta-tarea" draggable="true" data-codigo="' . $contenedor .'">' ;

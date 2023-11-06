@@ -40,7 +40,6 @@
                     <button type="submit" name="boton" >Registrarse</button>
                     
                 </form>
-                
             
         </div>
     </main>

@@ -30,6 +30,7 @@ if(isset($_POST['login'])){
             echo "Credenciales incorrectas. Inténtalo de nuevo.";
         }
         
+        
 
     }else {
         // Algún campo está vacío

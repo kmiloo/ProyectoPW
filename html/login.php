@@ -30,6 +30,7 @@
             </form>
             <p class="par">¿No tienes una cuenta? <a href="../html/registro.php">Registrate aquí</a></p>
             
+            
         </div>
     </main>
 </body>

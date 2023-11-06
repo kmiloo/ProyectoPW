@@ -21,6 +21,7 @@ const closeModalButton2 = document.getElementById("close-modal2");
 const contenedores = document.querySelectorAll(".tareas");
 let currentContenedor = null; // Rastrea el contenedor actual
 
+
 // Manejar la apertura del formulario modal
 addButtons.forEach((button, index) => {
   button.addEventListener("click", () => {
