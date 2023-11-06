@@ -1,19 +1,21 @@
 // Obtener elementos relevantes
 const addButtons = document.querySelectorAll(".fa-plus");
 const modal = document.getElementById("modal");
-const closeModalButton = document.getElementById("close-modal");
+
 
 const tituloInput = document.getElementById("titulo");
 const descripcionTextarea = document.getElementById("descripcion");
 const asignado = document.getElementById("asignado");
 const guardarButton = document.getElementById("guardar");
-const closeModalButton2 = document.getElementById("close-modal2");
+const closeModalButton = document.getElementById("close-modal");
+const id_estado = document.getElementById("id_estado");
 
 const modal2 = document.getElementById("modal2");
 const tituloInput2 = document.getElementById("titulo2");
 const descripcionTextarea2 = document.getElementById("descripcion2");
 const asignado2 = document.getElementById("asignado2");
 const guardarButton2 = document.getElementById("guardar2");
+const closeModalButton2 = document.getElementById("close-modal2");
 
 
 const contenedores = document.querySelectorAll(".tareas");
@@ -30,45 +32,11 @@ addButtons.forEach((button, index) => {
     asignado.value = "";
     // Rastrear el contenedor actual
     currentContenedor = contenedores[index];
+    id_estado.value = index+1;
   });
 });
 
-// Manejar la acción de guardar
-guardarButton.addEventListener("click", () => {
 
-  if (currentContenedor) {
-    let titulo = tituloInput.value;
-    let descripcion = descripcionTextarea.value;
-
-    // Crear una nueva carta
-    const newCard = document.createElement("div");
-    newCard.classList.add("carta-tarea");
-    newCard.draggable = true;
-                        
-    newCard.innerHTML = `
-      <div class="carta-header">
-        <a href="#"><i class="fa-solid fa-x" ></i></a>
-        <h5 class="carta-titulo">${titulo}</h5>
-        <a href="#"><i class="fas fa-edit"></i></a>
-      </div>
-      <div class="carta-texto">
-        <p class="carta-texto">${descripcion}</p>
-      </div>
-      <div class="carta-footer">
-        <i class="fa-solid fa-circle-user"></i>
-      </div>
-    `;
-
-    // Agregar la nueva carta al contenedor correspondiente
-    currentContenedor.appendChild(newCard);
-
-    // Cerrar el formulario modal
-    modal.style.display = "none";
-
-    // Restablecer el contenedor actual
-    currentContenedor = null;
-  }
-});
 
 // Manejar el cierre del formulario modal
 closeModalButton.addEventListener("click", () => {
@@ -143,4 +111,36 @@ document.addEventListener("click", (e) => {
       };
     }
   }
+});
+
+
+// Obtén todos los elementos con la clase "mi-clase"
+var elementos = document.querySelectorAll('.carta-tarea');
+
+elementos.forEach(function(elemento) {
+    // Obtiene el valor del atributo data-codigo
+    var codigo = elemento.getAttribute('data-codigo');
+
+    // Encuentra el contenedor en función del valor de codigo
+    var contenedor;
+
+    switch (codigo) {
+        case '1':
+            contenedor = document.getElementById('contenedor-1');
+            break;
+        case '2':
+            contenedor = document.getElementById('contenedor-2');
+            break;
+        case '3':
+            contenedor = document.getElementById('contenedor-3');
+            break;
+        default:
+            // Manejo de casos no esperados
+            break;
+    }
+
+    // Inserta el elemento en el contenedor
+    if (contenedor) {
+        contenedor.appendChild(elemento);
+    }
 });

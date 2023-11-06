@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/login.css">
-    <script src="../JS/login.js"></script>
+    
     <title>Mi Cuenta</title>
 </head>
 <body>
@@ -15,7 +15,10 @@
 
         <div class="container">
             
-                <form action="../html/index.html">
+                <form method="post">
+                    <?php
+                        include("../php/registrar_user.php");
+                    ?>
                     <label for="nombre">Nombre:</label>
                     <input type="text" id="nombre" name="nombre" placeholder="Tu nombre">
                     <div id="corre">
@@ -34,7 +37,7 @@
                         <option value="ar">Argentina</option>
                     </select>
                     
-                    <button type="button" onclick="ValidarCorreo()" >Registrarse</button>
+                    <button type="submit" name="boton" >Registrarse</button>
                     
                 </form>
                 

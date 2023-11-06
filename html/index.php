@@ -9,25 +9,39 @@
 </head>
 <body>
 
+    <?php
+        include("../php/registrar_tarea.php");
+    ?>
+
     <!-- ================= MENU DESPLEGABLE ======================-->
     <div id="modal" class="modal">
         <div class="modal-content">
             <span class="close" ><a href="#" id="close-modal"><i class="fa-solid fa-x fa-3x"></i></a></span>
             <div>
-                <div class="carta-headerr">
-                    <input type="text" id="titulo" placeholder="Título Tarea">
-                </div>
-                <div class="card-body">
-                    <textarea id="descripcion" placeholder="Descripción Tarea" autofocus="true" ></textarea>
-                </div>
-                <div class="carta-footerr">
-                    <input type="email" id="asignado" placeholder="Correo">
-                </div>
-                    <button id="guardar">Guardar</button>
+                <form method="post">
+                    <div class="carta-headerr">
+                        <input type="text" id="titulo" name="titulo" placeholder="Título Tarea">
+                    </div>
+                    <div class="card-body">
+                        <textarea id="descripcion" name="descripcion" placeholder="Descripción Tarea" autofocus="true" ></textarea>
+                    </div>
+                    <div class="carta-footerr">
+                        <input type="email" id="asignado" name="email" placeholder="Correo">
+                    </div>
+                    <input type="hidden" id="id_estado" name="id_estado">
+
+
+                    <button type="submit" name="guardar">Guardar</button>
+                </form>
             </div>
             
         </div>
     </div>
+
+
+
+
+
 
     <!-- ================= MENU DESPLEGABLE2(para ediciones) ======================-->
     <div id="modal2" class="modal2">
@@ -78,7 +92,7 @@
         <!-- ================= ZONA DE LOGOUT ======================-->
         <div class="logout">
             <li>
-                <a href="../html/login.html">
+                <a href="../html/login.php">
                     <i class="fa-solid fa-right-from-bracket"></i>
                     <span>Log Out</span>
                 </a>
@@ -108,7 +122,7 @@
             <!-- ================= CONTENEDOR POR HACER ======================-->
             <div class="tareas">
 
-                <div class="por-hacer">
+                <div class="por-hacer" id='contenedor-1'>
 
                     <!-- ================= header en tarea======================-->
                     <div class="por-hacer-header">
@@ -142,7 +156,7 @@
             <div class="tareas">  
 
                 <!-- ================= header proceso ======================-->
-                <div class="en-proceso">
+                <div class="en-proceso" id='contenedor-2'>
                     
                     <div class="en-proceso-header">
                         <p>En Proceso</p>
@@ -172,7 +186,7 @@
     
             <!-- ================= CONTENEDOR TERMINADO======================-->
             <div class="tareas">
-                <div class="terminado">
+                <div class="terminado" id='contenedor-3'>
                     <div class="terminado-header">
                         <p>Terminado</p>
                         <a href="#"><i class="fa-solid fa-plus fa-2x"></i></a>
