@@ -45,7 +45,7 @@ closeModalButton.addEventListener("click", () => {
 });
 // Manejar el cierre del formulario modal
 closeModalButton2.addEventListener("click", () => {
-  modal2.style.display = "none";
+  //modal2.style.display = "none";
 });
 
 // Manejar el movimiento de cartas entre contenedores
@@ -94,11 +94,14 @@ document.addEventListener("click", (e) => {
     if (carta) {
       const tituloCarta = carta.querySelector(".carta-titulo");
       const descripcionCarta = carta.querySelector(".carta-texto");
+      const asginadoCarta = carta.querySelector(".carta-email");
 
       // Abre el formulario de edición con los datos actuales de la carta
       modal2.style.display = "flex";
       tituloInput2.value = tituloCarta.textContent;
       descripcionTextarea2.value = descripcionCarta.textContent;
+      asignado2.value = asginadoCarta.textContent;
+
 
       // eliminar espacios vacios
       tituloInput2.value = tituloCarta.textContent.trim();

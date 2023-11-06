@@ -2,6 +2,7 @@
 
 include ("conexion.php");
 
+
 // REGISTRA CREAR CUENTAS 
 if(isset($_POST['boton'])){
     if(strlen($_POST['nombre']) >= 1 && strlen($_POST['correo']) >= 1 && strlen($_POST['contrasena']) >= 1 && strlen($_POST['pais']) >= 1){
@@ -33,11 +34,19 @@ if(isset($_POST['boton'])){
 
                 if($resultado){
                     header("Location: login.php");
+                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                        $destinatario = $_POST["correo"];
+                        $asunto = "Creacion de cuenta exitoso"
+                        $mensaje = "Se ah creado una cuenta en tr gestor de tareas"
                     
+                        $headers = "From: trgestordetareas@gmail.com";
+                        //se envia el mail
+                        mail($destinatario, $asunto, $mensaje, $headers);
+                          
+                    }
+
                 }
-                else{
-                    
-                }
+
             }
         }
     } else {

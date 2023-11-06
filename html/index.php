@@ -47,18 +47,23 @@
     <!-- ================= MENU DESPLEGABLE2(para ediciones) ======================-->
     <div id="modal2" class="modal2">
         <div class="modal-content2">
+            <?php
+                include("../php/editar_tarea.php");
+            ?>
             <span class="close2" ><a href="#" id="close-modal2"><i class="fa-solid fa-x fa-3x"></i></a></span>
             <div>
-                <div class="carta-headerr2">
-                    <input type="text" id="titulo2" >
-                </div>
-                <div class="card-body">
-                    <textarea id="descripcion2"></textarea>
-                </div>
-                <div class="carta-footerr">
-                    <input type="email" id="asignado2">
-                </div>
-                    <button id="guardar2">Guardar</button>
+                <form method="post" action="">
+                    <div class="carta-headerr2">
+                        <input type="text" id="titulo2" name="titulo2">
+                    </div>
+                    <div class="card-body">
+                        <textarea id="descripcion2" name="descripcion2"></textarea>
+                    </div>
+                    <div class="carta-footerr">
+                        <input type="email" id="asignado2" name="email2">
+                    </div>
+                    <button type="submit" id="guardar2">Guardar</button>
+                </form>
             </div>
             
         </div>
@@ -142,6 +147,7 @@
                             <p class="carta-texto">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         </div>
                         <div class="carta-footer">
+                            <p class="carta-email" style="display: none;"></p>
                             <i class="fa-solid fa-circle-user"></i>
                         </div>
                     </div>

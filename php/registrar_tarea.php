@@ -12,8 +12,10 @@ if (isset($_SESSION['id'])){
     $resultado_tarea = mysqli_query($conex, $consulta_tarea);
 
     while ($fila = mysqli_fetch_assoc($resultado_tarea)) {
+        $id_tarea = $fila['id'];
         $titulos = $fila['titulo'];
         $descripcions = $fila['descripcion'];
+        $correo = $fila['correo'];
 
         $id_estado = $fila['id_estado']; // Obtener el estado de la tarea desde la base de datos
 
@@ -38,38 +40,15 @@ if (isset($_SESSION['id'])){
         echo '<p class="carta-texto">' . $descripcions . '</p>';
         echo '</div>';
         echo '<div class="carta-footer">';
+        echo '<p class="carta-email" style="display: none;">' . $correo . '</p>';
         echo '<i class="fa-solid fa-circle-user"></i>';
+        echo '<input type="hidden" id="id" name="id value="' . $id_tarea . '">';
         echo '</div>';
         echo '</div>';
 
 
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
