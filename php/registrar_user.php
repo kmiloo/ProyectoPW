@@ -2,10 +2,8 @@
 
 include ("conexion.php");
 
-echo "asdsad";
 // REGISTRA CREAR CUENTAS 
 if(isset($_POST['boton'])){
-    echo "asdsad";
     if(strlen($_POST['nombre']) >= 1 && strlen($_POST['correo']) >= 1 && strlen($_POST['contrasena']) >= 1 && strlen($_POST['pais']) >= 1){
 
         $nombre = trim($_POST['nombre']);
@@ -35,15 +33,10 @@ if(isset($_POST['boton'])){
 
                 if($resultado){
                     header("Location: login.php");
-                    ?>
-                    <h3 class="ok">SE HAN GUARDADO LOS DATOS</h3>
                     
-                    <?php
                 }
                 else{
-                    ?>
-                    <h3 class="bad">NO SE HAN GUARDADO LOS DATOS</h3>
-                    <?php
+                    
                 }
             }
         }

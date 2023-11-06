@@ -21,6 +21,7 @@ if(isset($_POST['login'])){
             $_SESSION['id'] = $fila['id'];
             $_SESSION['nombre'] = $fila['nombre'];
             $_SESSION['correo'] = $fila['correo'];
+            $_SESSION['contrasena'] = $fila['contrasena'];
             $_SESSION['pais'] = $fila['pais'];
             echo "<script>window.location.href = 'index.php';</script>";
 
@@ -39,10 +40,6 @@ if(isset($_POST['login'])){
         <?php
     }
 }
-
-
-
-
 
 
 ?>

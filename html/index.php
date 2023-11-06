@@ -112,7 +112,7 @@
             </div>
             <div class="iconos-arriba">
                 <li>
-                    <a href="../html/acount.html" ><i class="fa-regular fa-user"></i></a>
+                    <a href="../html/account.php" ><i class="fa-regular fa-user"></i></a>
                 </li>
             </div>
         </div>
