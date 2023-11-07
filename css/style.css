@@ -9,7 +9,7 @@
 
 /* COLOR DE FONDO */
 body{
-    background-color: white;
+    background-color: #d6edff;
 }
 
 /* MENU LATERAL*/
@@ -18,7 +18,7 @@ body{
 /* MENU LATERAL*/
 
 .menu{
-    background: white;
+    background: #eff0e8;
     height: 100%;
     box-shadow: 7px -1px 12px rgba(0, 0, 0, 0.11);
     display: flex;
@@ -39,7 +39,7 @@ body{
 
 .inicio li{
     height: 70px;
-    background-color: white;
+    background-color: #eff0e8;
     
     
 }
@@ -61,7 +61,7 @@ body{
 
 .logout li{
     height: 70px;
-    background-color: white;
+    background-color: #eff0e8;
 }
 .logout li a span{
     padding-left: 5%;
@@ -225,11 +225,28 @@ body{
     align-items: center;
 }
 
+#porhacer{
+    background-color: #f4eeee;
+}
+#enproceso{
+    background-color: #f5f3de;
+}
+#terminado{
+    background-color: #b3f5d6;
+}
+#miBoton{
+    border-style: none;
+    background-color: #fffee8;
+    cursor: pointer;
+}
+
+
+
 /* CARTAS DENTRO DE TAREAS*/
 /* CARTAS DENTRO DE TAREAS*/
 /* CARTAS DENTRO DE TAREAS*/
 .carta-tarea{
-    background-color: white;
+    background-color: #fffee8;
     border-radius: 20px;
     box-shadow: 7px -1px 12px rgba(0, 0, 0, 0.11);
     margin-top: 15%;

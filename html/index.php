@@ -126,7 +126,7 @@
         <!-- ================= CONTENEDORES DE TAREAS ======================-->
         <div class="contenedores-tareas">
             <!-- ================= CONTENEDOR POR HACER ======================-->
-            <div class="tareas">
+            <div class="tareas" id='porhacer'>
 
                 <div class="por-hacer" id='contenedor-1'>
 
@@ -138,7 +138,9 @@
 
                     <!-- ================= CARTAS DE TAREAS (mejorar)======================-->
                     <div class="carta-tarea" draggable="true">
+                        <form method="post">
                         <a href="#"><i class="fa-solid fa-x" ></i></a>
+                        </form>
                         <div class="carta-header">
                             <h5 class="carta-titulo">Success card title</h5>
                             <a href="#"><i id="edit" class="fas fa-edit"></i></a>
@@ -160,7 +162,7 @@
 
 
             <!-- ================= CONTENEDOR EN PROCESO======================-->
-            <div class="tareas">  
+            <div class="tareas" id='enproceso'>  
 
                 <!-- ================= header proceso ======================-->
                 <div class="en-proceso" id='contenedor-2'>
@@ -192,7 +194,7 @@
     
     
             <!-- ================= CONTENEDOR TERMINADO======================-->
-            <div class="tareas">
+            <div class="tareas" id='terminado'>
                 <div class="terminado" id='contenedor-3'>
                     <div class="terminado-header">
                         <p>Terminado</p>

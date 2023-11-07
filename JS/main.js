@@ -45,7 +45,7 @@ closeModalButton.addEventListener("click", () => {
 });
 // Manejar el cierre del formulario modal
 closeModalButton2.addEventListener("click", () => {
-  //modal2.style.display = "none";
+  modal2.style.display = "none";
 });
 
 // Manejar el movimiento de cartas entre contenedores
@@ -61,9 +61,32 @@ contenedores.forEach((contenedor) => {
     if (draggedCard) {
       contenedor.appendChild(draggedCard);
       draggedCard.classList.remove("dragging");
+      //alert(contenedor.id);
+      // Notificar al servidor de PHP sobre la acción
+      // const contenedorId = contenedor.id;
+      // notificarAlServidor(contenedorId);
     }
   });
 });
+// function notificarAlServidor(contenedorId) {
+//   // Realizar una solicitud AJAX al servidor para notificar la acción.
+//   fetch("notificar.php", {
+//     method: "POST",
+//     body: JSON.stringify({ contenedorId }),
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//   })
+//     .then((response) => response.text())
+//     .then((data) => {
+//       console.log(data);
+//     })
+//     .catch((error) => {
+//       console.error("Error:", error);
+//     });
+// }
+
+
 
 document.addEventListener("dragstart", (e) => {
   const draggedCard = e.target;

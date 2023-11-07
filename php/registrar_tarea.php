@@ -31,7 +31,9 @@ if (isset($_SESSION['id'])){
 
         // Genera el contenido de la carta de tarea con los datos de la base de datos
         echo '<div class="carta-tarea" draggable="true" data-codigo="' . $contenedor .'">' ;
-        echo '<a href="#"><i class="fa-solid fa-x" ></i></a>';
+        echo '<form method="post">';
+        echo '<button type="submit" id="miBoton" name="eliminar" value="1"><i class="fas fa-x"></i></button>';
+        echo '</form>';
         echo '<div class="carta-header">';
         echo '<h5 class="carta-titulo">' . $titulos . '</h5>';
         echo '<a href="#"><i id="edit" class="fas fa-edit"></i></a>';
@@ -46,8 +48,6 @@ if (isset($_SESSION['id'])){
         echo '</div>';
         echo '</div>';
 
-
-
     }
 
 
@@ -60,7 +60,7 @@ if (isset($_SESSION['id'])){
             $descripcion = trim($_POST['descripcion']);
             $email = trim($_POST['email']);
 
-            $id_estado = trim($_POST['id_estado']);;
+            $id_estado = trim($_POST['id_estado']);
 
             // Consulta para obtener la ID del usuarios 
             $consulta_usuarios = "SELECT id FROM usuarios WHERE correo = '$email'";
@@ -98,6 +98,24 @@ if (isset($_SESSION['id'])){
             <?php
             }
     }
+
+    //eliminar tareas
+    // if(isset($_POST['eliminar'])){
+    //     $id2 = trim($_POST['id']);
+
+    //     $consulta_eliminar = "SELECT * FROM usuarios WHERE id = '$id2'";
+    //     $resultado_eliminar = mysqli_query($conex, $consulta_eliminar);
+
+    //     if($resultado_eliminar){
+    //         $eliminar = "DELETE FROM `tareas` WHERE id = '$id2'";
+    //         $result_eliminar = mysqli_query($conex, $consulta_eliminar);
+    //     }else{
+    //         echo 'error2';
+    //     }
+
+    // }else{
+    //     echo 'error1';
+    // }
 
 }
 
