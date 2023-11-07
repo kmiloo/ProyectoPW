@@ -11,7 +11,6 @@
 
     <?php
         include("../php/registrar_tarea.php");
-        include("../php/eliminar_tarea.php");
         
     ?>
    
@@ -41,7 +40,7 @@
     </div>
 
     <!-- ================= MENU DESPLEGABLE de eliminacion ======================-->
-    <div id="modal3" class="modal3">
+    <!-- <div id="modal3" class="modal3">
         <div class="modal-content3">
             <div>
                 <form method="post">
@@ -57,7 +56,7 @@
             </div>
             
         </div>
-    </div>
+    </div> -->
     
 
 
@@ -159,8 +158,8 @@
                         <a href="#"><i class="fa-solid fa-plus fa-2x"></i></a>
                     </div>
 
-                    <!-- ================= CARTAS DE TAREAS (mejorar)======================-->
-                    <div class="carta-tarea" draggable="true">
+                    <!-- ================= CARTAS DE TAREAS ======================-->
+                    <!-- <div class="carta-tarea" draggable="true">
                         <form method="post">
                         <a href="#"><i class="fa-solid fa-x" ></i></a>
                         </form>
@@ -175,7 +174,7 @@
                             <p class="carta-email" style="display: none;"></p>
                             <i class="fa-solid fa-circle-user"></i>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
             </div>
@@ -196,7 +195,7 @@
                     </div>
 
                     <!-- ================= UNA CARTA ======================-->
-                    <div class="carta-tarea" draggable="true">
+                    <!-- <div class="carta-tarea" draggable="true">
                         <a href="#"><i class="fa-solid fa-x" ></i></a>
                         <div class="carta-header">
                             <h5 class="carta-titulo">Success card title</h5>
@@ -208,7 +207,7 @@
                         <div class="carta-footer">
                             <i class="fa-solid fa-circle-user"></i>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
             </div>
@@ -225,7 +224,7 @@
                     </div>
 
                     <!-- ================= UNA CARTA ======================-->
-                    <div class="carta-tarea" draggable="true">
+                    <!-- <div class="carta-tarea" draggable="true">
                         <a href="#"><i class="fa-solid fa-x" ></i></a>
                         <div class="carta-header">
                             <h5 class="carta-titulo">Success card title</h5>
@@ -237,7 +236,7 @@
                         <div class="carta-footer">
                             <i class="fa-solid fa-circle-user"></i>
                         </div>
-                    </div>
+                    </div> -->
                 
             </div>
         </div>

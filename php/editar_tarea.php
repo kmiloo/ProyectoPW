@@ -26,16 +26,7 @@ if (isset($_SESSION['id'])){
                     //envia el correo
                     mail($destinatario, $asunto, $mensaje, $headers);
                 }
-            }else{
-                ?>
-                    <h3 class="bad">NO resulto consulta</h3>
-                <?php
             }
-    }
-    else{
-        ?>
-            <h3 class="bad">NO apreto boton</h3>
-        <?php
     }
 
 

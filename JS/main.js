@@ -87,7 +87,7 @@ contenedores.forEach((contenedor) => {
 
       let str = draggedCard.querySelector('.carta-tarea .carta-titulo').textContent;
 
-      // alert(draggedCard.querySelector('.carta-tarea .carta-titulo').textContent;);
+
       
       let Elid = 1; 
       if(contenedor.id=='enproceso'){
@@ -98,29 +98,12 @@ contenedores.forEach((contenedor) => {
 
       xhttp.open("GET", "../php/cambiarcontenedor.php?t="+str+"&cont="+Elid, true);
       xhttp.send();
-      // const contenedorId = contenedor.id;
-      // notificarAlServidor(contenedorId);
+
 
     }
   });
 });
-// function notificarAlServidor(contenedorId) {
-//   // Realizar una solicitud AJAX al servidor para notificar la acción.
-//   fetch("notificar.php", {
-//     method: "POST",
-//     body: JSON.stringify({ contenedorId }),
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//   })
-//     .then((response) => response.text())
-//     .then((data) => {
-//       console.log(data);
-//     })
-//     .catch((error) => {
-//       console.error("Error:", error);
-//     });
-// }
+
 
 
 

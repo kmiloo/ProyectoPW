@@ -76,26 +76,9 @@ if (isset($_SESSION['id'])){
                 $consulta2 = "INSERT INTO tareas(titulo, descripcion, correo, id_usuarios, id_estado) VALUES ('$titulo', '$descripcion', '$email', $id_usuarios, $id_estado)";
                 $resultado2 = mysqli_query($conex, $consulta2);
     
-                //si resulta la consulta
-                if($resultado2){
-                    ?>
-                    <h3 class="ok">SE HAN GUARDADO LOS DATOS</h3>
-                    
-                    <?php
-                } else {
-                    ?>
-                    <h3 class="bad">NO SE HAN GUARDADO LOS DATOS</h3>
-                    <?php
-                }
-            }else {
+            }
+        }
                 
-                ?>
-                <h3 class="bad">El correo no se encuentra en la base de datos </h3>
-                <?php
-            }
-            }else {
-            
-            }
     }
 
 }
