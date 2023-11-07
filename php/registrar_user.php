@@ -32,20 +32,20 @@ if(isset($_POST['boton'])){
                 $consulta = "INSERT INTO usuarios(nombre, correo, contrasena, pais) VALUES ('$nombre','$correo','$contrasena','$pais')";
                 $resultado = mysqli_query($conex, $consulta);
 
-                // if($resultado){
-                //     header("Location: login.php");
-                //     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                //         $destinatario = $_POST["correo"];
-                //         $asunto = "Creacion de cuenta exitoso"
-                //         $mensaje = "Se ah creado una cuenta en tr gestor de tareas"
+                if($resultado){
+                    header("Location: login.php");
+                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                        $destinatario = $_POST["correo"];
+                        $asunto = "Creacion de cuenta exitoso";
+                        $mensaje = "Se ah creado una cuenta en tr gestor de tareas";
                     
-                //         $headers = "From: trgestordetareas@gmail.com";
-                //         //se envia el mail
-                //         mail($destinatario, $asunto, $mensaje, $headers);
+                        $headers = "From: trgestordetareas@gmail.com";
+                        //se envia el mail
+                        mail($destinatario, $asunto, $mensaje, $headers);
                           
-                //     }
+                    }
 
-                // }
+                }
 
             }
         }
