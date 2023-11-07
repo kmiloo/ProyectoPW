@@ -16,7 +16,12 @@ const descripcionTextarea2 = document.getElementById("descripcion2");
 const asignado2 = document.getElementById("asignado2");
 const guardarButton2 = document.getElementById("guardar2");
 const closeModalButton2 = document.getElementById("close-modal2");
+const asdfsadf = document.querySelectorAll("#id");
 
+const eliminarButtons = document.querySelectorAll(".equis");
+const modal3 = document.getElementById("modal3");
+const eliminar = document.getElementById("eliminar");
+const cancelar = document.getElementById("cancelar");
 
 const contenedores = document.querySelectorAll(".tareas");
 let currentContenedor = null; // Rastrea el contenedor actual
@@ -36,6 +41,21 @@ addButtons.forEach((button, index) => {
     id_estado.value = index+1;
   });
 });
+
+eliminarButtons.forEach((button2, index2) => {
+  button2.addEventListener("click", () => {
+    modal3.style.display = "flex";
+
+    // Rastrear el contenedor actual
+    currentContenedor = contenedores[index2];
+    //id_estado2.value = index2+1;
+  });
+});
+
+
+
+
+
 
 
 
@@ -61,10 +81,26 @@ contenedores.forEach((contenedor) => {
     if (draggedCard) {
       contenedor.appendChild(draggedCard);
       draggedCard.classList.remove("dragging");
-      //alert(contenedor.id);
+
       // Notificar al servidor de PHP sobre la acción
+      xhttp = new XMLHttpRequest();
+
+      let str = draggedCard.querySelector('.carta-tarea .carta-titulo').textContent;
+
+      // alert(draggedCard.querySelector('.carta-tarea .carta-titulo').textContent;);
+      
+      let Elid = 1; 
+      if(contenedor.id=='enproceso'){
+        Elid = 2; 
+      }else if (contenedor.id=='terminado'){
+        Elid = 3; 
+      }
+
+      xhttp.open("GET", "../php/cambiarcontenedor.php?t="+str+"&cont="+Elid, true);
+      xhttp.send();
       // const contenedorId = contenedor.id;
       // notificarAlServidor(contenedorId);
+
     }
   });
 });
@@ -124,6 +160,10 @@ document.addEventListener("click", (e) => {
       tituloInput2.value = tituloCarta.textContent;
       descripcionTextarea2.value = descripcionCarta.textContent;
       asignado2.value = asginadoCarta.textContent;
+
+      //alert(modal2);
+      
+      
 
 
       // eliminar espacios vacios

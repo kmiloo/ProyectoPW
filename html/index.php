@@ -11,7 +11,10 @@
 
     <?php
         include("../php/registrar_tarea.php");
+        include("../php/eliminar_tarea.php");
+        
     ?>
+   
 
     <!-- ================= MENU DESPLEGABLE ======================-->
     <div id="modal" class="modal">
@@ -30,8 +33,26 @@
                     </div>
                     <input type="hidden" id="id_estado" name="id_estado">
 
-
                     <button type="submit" name="guardar">Guardar</button>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- ================= MENU DESPLEGABLE de eliminacion ======================-->
+    <div id="modal3" class="modal3">
+        <div class="modal-content3">
+            <div>
+                <form method="post">
+                    <div class="carta-headerr">
+                        <h5>Estas seguro que quieres eliminar la tarea</h5>
+                    </div>
+                    <input type="hidden" id="id_estado2" name="id_estado2">
+                    <div>
+                        <button type="submit" id="eliminar" name="eliminar">Eliminar</button>
+                        <button type="submit" id="cancelar"name="cancelar">Cancelar</button>
+                    </div>
                 </form>
             </div>
             
@@ -45,11 +66,12 @@
 
 
     <!-- ================= MENU DESPLEGABLE2(para ediciones) ======================-->
-    <div id="modal2" class="modal2">
-        <div class="modal-content2">
             <?php
                 include("../php/editar_tarea.php");
             ?>
+    <div id="modal2" class="modal2">
+        <div class="modal-content2">
+            
             <span class="close2" ><a href="#" id="close-modal2"><i class="fa-solid fa-x fa-3x"></i></a></span>
             <div>
                 <form method="post" action="">
@@ -62,7 +84,8 @@
                     <div class="carta-footerr">
                         <input type="email" id="asignado2" name="email2">
                     </div>
-                    <button type="submit" id="guardar2">Guardar</button>
+                    <input type="hidden" id="id_estado2" name="id_estado2">
+                    <button type="submit" id="guardar2" name="guardar2">Guardar</button>
                 </form>
             </div>
             

@@ -31,9 +31,7 @@ if (isset($_SESSION['id'])){
 
         // Genera el contenido de la carta de tarea con los datos de la base de datos
         echo '<div class="carta-tarea" draggable="true" data-codigo="' . $contenedor .'">' ;
-        echo '<form method="post">';
-        echo '<button type="submit" id="miBoton" name="eliminar" value="1"><i class="fas fa-x"></i></button>';
-        echo '</form>';
+        echo '<a href="#"><i class="fa-solid fa-x equis" ></i></a>';
         echo '<div class="carta-header">';
         echo '<h5 class="carta-titulo">' . $titulos . '</h5>';
         echo '<a href="#"><i id="edit" class="fas fa-edit"></i></a>';
@@ -44,9 +42,11 @@ if (isset($_SESSION['id'])){
         echo '<div class="carta-footer">';
         echo '<p class="carta-email" style="display: none;">' . $correo . '</p>';
         echo '<i class="fa-solid fa-circle-user"></i>';
-        echo '<input type="hidden" id="id" name="id value="' . $id_tarea . '">';
+        echo '<input type="hidden" id="id" name="id" value="' . $id_tarea . '">';
         echo '</div>';
         echo '</div>';
+
+
 
     }
 
@@ -56,11 +56,12 @@ if (isset($_SESSION['id'])){
     //se guardan tareas en bdd
     if(isset($_POST['guardar'])){
         if(strlen($_POST['titulo']) >= 1 && strlen($_POST['descripcion']) >= 1 && strlen($_POST['email']) >= 1){
+
             $titulo = trim($_POST['titulo']);
             $descripcion = trim($_POST['descripcion']);
             $email = trim($_POST['email']);
 
-            $id_estado = trim($_POST['id_estado']);
+            $id_estado = trim($_POST['id_estado']);;
 
             // Consulta para obtener la ID del usuarios 
             $consulta_usuarios = "SELECT id FROM usuarios WHERE correo = '$email'";
@@ -69,7 +70,7 @@ if (isset($_SESSION['id'])){
             if ($resultado_usuarios && $fila = mysqli_fetch_assoc($resultado_usuarios)) {
                 // Obtiene la ID del usuarios
                 $id_usuarios = $fila['id'];
-                echo 'id usuario es: '. $id_usuarios . 'id estad es: '.$id_estado;
+                //echo 'id usuario es: '. $id_usuarios . 'id estad es: '.$id_estado;
     
                 // Realiza la inserción en la tabla "cartas"
                 $consulta2 = "INSERT INTO tareas(titulo, descripcion, correo, id_usuarios, id_estado) VALUES ('$titulo', '$descripcion', '$email', $id_usuarios, $id_estado)";
@@ -93,29 +94,9 @@ if (isset($_SESSION['id'])){
                 <?php
             }
             }else {
-            ?>
-            <h3 class="bad">COMPLETE LOS CAMPOS</h3>
-            <?php
+            
             }
     }
-
-    //eliminar tareas
-    // if(isset($_POST['eliminar'])){
-    //     $id2 = trim($_POST['id']);
-
-    //     $consulta_eliminar = "SELECT * FROM usuarios WHERE id = '$id2'";
-    //     $resultado_eliminar = mysqli_query($conex, $consulta_eliminar);
-
-    //     if($resultado_eliminar){
-    //         $eliminar = "DELETE FROM `tareas` WHERE id = '$id2'";
-    //         $result_eliminar = mysqli_query($conex, $consulta_eliminar);
-    //     }else{
-    //         echo 'error2';
-    //     }
-
-    // }else{
-    //     echo 'error1';
-    // }
 
 }
 
