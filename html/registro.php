@@ -40,6 +40,7 @@
                     <button type="submit" name="boton" >Registrarse</button>
                     
                 </form>
+                <p class="par">¿Ya tienes una cuenta? <a href="../html/login.php">Inicia sesion aquí</a></p>
             
         </div>
     </main>

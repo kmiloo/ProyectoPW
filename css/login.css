@@ -1,72 +1,75 @@
-*{
+* {
     font-family: 'Verdana';
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-body{
+
+body {
     display: flex;
     justify-content: center;
     background-color: #c2daff;
 }
 
-main{
+main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
-    
 }
-.logo{
+
+.logo {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     background-color: #c2daff;
-    padding-bottom: 0;
-    padding-top: 5%;
-    height: 150px;
-    
+    padding: 5% 0;
+    max-height: 150px;
+    overflow: hidden;
+    object-fit: cover;
 }
 
 .container {
     background-color: #a1c1f1;
-    width: 100%;
-    margin: 0 50px 3vw 50px;
     border-radius: 5px;
     padding: 5vh 5vw;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    width: 100%;
 }
 
-h2{
+h2 {
     text-align: center;
     padding-bottom: 3vh;
 }
-
-
 
 label {
     font-weight: bold;
     margin-bottom: 1vh;
 }
 
-.login label{
+.login label {
     font-weight: bold;
     margin: 1vh 0 3vh 0;
 }
 
-form{
+form {
     display: flex;
     flex-direction: column;
 }
 
-form input,select{
+form input, select {
     padding: 15px;
     margin-bottom: 2%;
     background-color: white;
     border: 1px solid #ccc;
     border-radius: 5px;
+    width: 100%;
+    max-width: 600px;
+    min-width: 550px;
 }
-form div{
+
+form div {
     display: flex;
     flex-direction: column;
 }
@@ -80,7 +83,6 @@ button {
     cursor: pointer;
     margin-top: 10px;
     width: 100%;
-   
 }
 
 button:hover {
@@ -89,22 +91,68 @@ button:hover {
     color: black;
 }
 
-.container .par{
+.container .par {
     margin-top: 2vh;
 }
 
-.container a{
+.container a {
     color: purple;
-    
 }
 
-.container a:hover{
+.container a:hover {
     text-decoration: underline;
+}
+
+.icono2{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 5%;
+    padding-top: 5%;
+}
+.icono2 p{
+    width: 80px;
+}
+.icono2 .fa-regular{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.icono2 a{
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.flecha{
+    width: 80px;
+    height: 100%;
+    display: flex;
+    background-color: #e3e8ec;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+.flecha:hover{
+
+    background-color: #d3dadf
 }
 
 
 @media (max-width: 767px) {
-    button {
-        width: 100%;
+    .logo {
+        flex-direction: column;
+        align-items: center;
+        padding: 5% 0;
+        max-height: none;
+    }
+
+    .container {
+        max-width: 100%;
+    }
+    form input, select {
+        min-width: auto;
     }
 }

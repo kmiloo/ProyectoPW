@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../css/acount.css">
+    <link rel="stylesheet" type="text/css" href="../css/login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <title>Mi Cuenta</title>
 </head>
@@ -14,7 +14,7 @@
     <main>
         
         
-        <div class="icono">
+        <div class="icono2">
             <div class="flecha">
                 <a href="index.php"><i class="fa-solid fa-arrow-left fa-3x"></i></a>
             </div>
