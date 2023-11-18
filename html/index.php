@@ -3,16 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Gestor de tareas</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
 
-    <?php
-        include("../php/registrar_tarea.php");
-        
-    ?>
+
    
 
     <!-- ================= MENU DESPLEGABLE ======================-->
@@ -20,7 +17,7 @@
         <div class="modal-content">
             <span class="close" ><a href="#" id="close-modal"><i class="fa-solid fa-x fa-3x"></i></a></span>
             <div>
-                <form method="post">
+                <form id="form-tareas">
                     <div class="carta-headerr">
                         <input type="text" id="titulo" name="titulo" placeholder="Título Tarea">
                     </div>
@@ -28,70 +25,21 @@
                         <textarea id="descripcion" name="descripcion" placeholder="Descripción Tarea" autofocus="true" ></textarea>
                     </div>
                     <div class="carta-footerr">
-                        <input type="email" id="asignado" name="email" placeholder="Correo">
+                        <input type="email" id="correo" name="email" placeholder="Correo">
                     </div>
                     <input type="hidden" id="id_estado" name="id_estado">
+                    <input type="hidden" id="id">
 
-                    <button type="submit" name="guardar">Guardar</button>
+                    <button type="submit" name="guardar" id="guardar">Guardar</button>
                 </form>
             </div>
             
         </div>
     </div>
 
-    <!-- ================= MENU DESPLEGABLE de eliminacion ======================-->
-    <!-- <div id="modal3" class="modal3">
-        <div class="modal-content3">
-            <div>
-                <form method="post">
-                    <div class="carta-headerr">
-                        <h5>Estas seguro que quieres eliminar la tarea</h5>
-                    </div>
-                    <input type="hidden" id="id_estado2" name="id_estado2">
-                    <div>
-                        <button type="submit" id="eliminar" name="eliminar">Eliminar</button>
-                        <button type="submit" id="cancelar"name="cancelar">Cancelar</button>
-                    </div>
-                </form>
-            </div>
-            
-        </div>
-    </div> -->
-    
-
-
-
-
-
-
-    <!-- ================= MENU DESPLEGABLE2(para ediciones) ======================-->
-            <?php
-                include("../php/editar_tarea.php");
-            ?>
-    <div id="modal2" class="modal2">
-        <div class="modal-content2">
-            
-            <span class="close2" ><a href="#" id="close-modal2"><i class="fa-solid fa-x fa-3x"></i></a></span>
-            <div>
-                <form method="post" action="">
-                    <div class="carta-headerr2">
-                        <input type="text" id="titulo2" name="titulo2">
-                    </div>
-                    <div class="card-body">
-                        <textarea id="descripcion2" name="descripcion2"></textarea>
-                    </div>
-                    <div class="carta-footerr">
-                        <input type="email" id="asignado2" name="email2">
-                    </div>
-                    <input type="hidden" id="id_estado2" name="id_estado2">
-                    <button type="submit" id="guardar2" name="guardar2">Guardar</button>
-                </form>
-            </div>
-            
-        </div>
-    </div>
-    
-    
+    <?php
+        session_start();
+    ?>
 
     <!-- ================= SIDE VAR ======================-->
     <nav class="menu">
@@ -102,19 +50,10 @@
             </div>
             <li>
                 <a href="">
-                    <span>Inicio</span>
+                    <span>Inicio <?php $_SESSION['correo']?></span>
                 </a>
             </li>
-            <!-- <li>
-                <a href="#">
-                    <span>About</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <span>Settings</span>
-                </a>
-            </li> -->
+
         </div>
 
         <!-- ================= ZONA DE LOGOUT ======================-->
@@ -127,6 +66,7 @@
             </li>
         </div>
     </nav>
+
     
 
     <main>
@@ -149,32 +89,14 @@
         <div class="contenedores-tareas">
             <!-- ================= CONTENEDOR POR HACER ======================-->
             <div class="tareas" id='porhacer'>
+                <!-- ================= header en tarea======================-->
+                <div class="por-hacer-header">
+                    <p>Por hacer</p>
+                    <a href="#"><i class="fa-solid fa-plus fa-2x"></i></a>
+                </div>
 
-                <div class="por-hacer" id='contenedor-1'>
+                <div class="por-hacer" id='1'>
 
-                    <!-- ================= header en tarea======================-->
-                    <div class="por-hacer-header">
-                        <p>Por hacer</p>
-                        <a href="#"><i class="fa-solid fa-plus fa-2x"></i></a>
-                    </div>
-
-                    <!-- ================= CARTAS DE TAREAS ======================-->
-                    <!-- <div class="carta-tarea" draggable="true">
-                        <form method="post">
-                        <a href="#"><i class="fa-solid fa-x" ></i></a>
-                        </form>
-                        <div class="carta-header">
-                            <h5 class="carta-titulo">Success card title</h5>
-                            <a href="#"><i id="edit" class="fas fa-edit"></i></a>
-                        </div>
-                        <div class="carta-texto">
-                            <p class="carta-texto">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                        <div class="carta-footer">
-                            <p class="carta-email" style="display: none;"></p>
-                            <i class="fa-solid fa-circle-user"></i>
-                        </div>
-                    </div> -->
 
                 </div>
             </div>
@@ -185,29 +107,14 @@
 
             <!-- ================= CONTENEDOR EN PROCESO======================-->
             <div class="tareas" id='enproceso'>  
-
                 <!-- ================= header proceso ======================-->
-                <div class="en-proceso" id='contenedor-2'>
-                    
-                    <div class="en-proceso-header">
-                        <p>En Proceso</p>
-                        <a href="#"><i class="fa-solid fa-plus fa-2x"></i></a>
-                    </div>
+                <div class="en-proceso-header">
+                    <p>En Proceso</p>
+                    <a href="#"><i class="fa-solid fa-plus fa-2x"></i></a>
+                </div>
 
-                    <!-- ================= UNA CARTA ======================-->
-                    <!-- <div class="carta-tarea" draggable="true">
-                        <a href="#"><i class="fa-solid fa-x" ></i></a>
-                        <div class="carta-header">
-                            <h5 class="carta-titulo">Success card title</h5>
-                            <a href="#"><i id="edit" class="fas fa-edit"></i></a>
-                        </div>
-                        <div class="carta-texto">
-                            <p class="carta-texto">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                        <div class="carta-footer">
-                            <i class="fa-solid fa-circle-user"></i>
-                        </div>
-                    </div> -->
+                <div class="en-proceso" id='2'>
+
 
                 </div>
             </div>
@@ -217,30 +124,28 @@
     
             <!-- ================= CONTENEDOR TERMINADO======================-->
             <div class="tareas" id='terminado'>
-                <div class="terminado" id='contenedor-3'>
-                    <div class="terminado-header">
-                        <p>Terminado</p>
-                        <a href="#"><i class="fa-solid fa-plus fa-2x"></i></a>
-                    </div>
 
-                    <!-- ================= UNA CARTA ======================-->
-                    <!-- <div class="carta-tarea" draggable="true">
-                        <a href="#"><i class="fa-solid fa-x" ></i></a>
-                        <div class="carta-header">
-                            <h5 class="carta-titulo">Success card title</h5>
-                            <a href="#"><i id="edit" class="fas fa-edit"></i></a>
-                        </div>
-                        <div class="carta-texto">
-                            <p class="carta-texto">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                        <div class="carta-footer">
-                            <i class="fa-solid fa-circle-user"></i>
-                        </div>
-                    </div> -->
+                <div class="terminado-header">
+                    <p>Terminado</p>
+                    <a href="#"><i class="fa-solid fa-plus fa-2x"></i></a>
+                </div>
+
+                <div class="terminado" id='3'>
+                   
                 
             </div>
         </div>
-        <script src="../JS/main.js"></script>
     </main>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="../js/agregar-tareas-bdd.js"></script>
+    <script src="../js/movimiento.js"></script>
+    <script src="../js/formulario.js"></script>
+
 </body>
 </html>

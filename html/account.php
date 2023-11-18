@@ -6,11 +6,9 @@
     <link rel="stylesheet" type="text/css" href="../css/login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <title>Mi Cuenta</title>
+    <?php include("../php/account.php");?>
 </head>
 <body>
-    <?php
-        include("../php/account.php");
-    ?>
     <main>
         
         

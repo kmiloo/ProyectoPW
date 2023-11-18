@@ -1,6 +1,6 @@
 <?php
 
-include ("conexion.php");
+include ("conex.php");
 
 
 // REGISTRA CREAR CUENTAS 
@@ -22,7 +22,7 @@ if(isset($_POST['boton'])){
             <p style="color: rgb(217,48,37);">El correo ya esta registrado, Intente con uno nuevo o inicie sesion.</p>
             <?php
         } else {
-            // Contraseña mínima de 6 caracteres (puedes ajustar este requisito según tus necesidades)
+            
             if (strlen($contrasena) < 6) {
                 ?>
                 <p style="color: rgb(217,48,37);">La contraseña debe tener al menos 6 caracteres.</p>

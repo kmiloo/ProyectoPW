@@ -1,7 +1,8 @@
 <?php
 
-include ("conexion.php");
+include ("conex.php");
 session_reset();
+
 
 if(isset($_POST['login'])){
     if(strlen($_POST['correo']) >= 1 && strlen($_POST['contrasena']) >= 1){
