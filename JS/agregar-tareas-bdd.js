@@ -15,6 +15,7 @@ $(document).ready(function() {
             titulo: $('#titulo').val(),
             descripcion: $('#descripcion').val(),
             correo: $('#correo').val(),
+            fecha: $('#fecha').val(),
             id_estado: $('#id_estado').val(),
             id: $('#id').val(),
         };
@@ -121,10 +122,10 @@ $(document).ready(function() {
             $('#titulo').val(tarea.titulo);
             $('#descripcion').val(tarea.descripcion);
             $('#correo').val(tarea.correo);
+            $('#fecha').val(tarea.fecha);
             $('#id_estado').val(tarea.id_estado);
             $('#id').val(tarea.id);
             editar=true;
-            
 
         });
 

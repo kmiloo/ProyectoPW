@@ -27,6 +27,7 @@
                     <div class="carta-footerr">
                         <input type="email" id="correo" name="email" placeholder="Correo">
                     </div>
+                    <input type="date" id="fecha" name="fecha" placeholder="fecha">
                     <input type="hidden" id="id_estado" name="id_estado">
                     <input type="hidden" id="id">
 

@@ -166,7 +166,7 @@ body{
 .modal textarea,.modal2 textarea{
     width: 100%!important;
     min-height: 150px;
-    max-height: 215px;
+    max-height: 180px;
 }
 
 
@@ -187,6 +187,7 @@ body{
     background-color: #EEF2F5; 
     box-shadow: 7px -1px 12px rgba(0, 0, 0, 0.11); 
     border-radius: 20px;
+    margin-bottom: 5%;
 }
 
 .contenedores-tareas .tareas .por-hacer{
@@ -344,7 +345,13 @@ body{
     .contenedores-tareas {
         display: flex;
         flex-direction: column;
+        padding-left: 4%;
     }
-
-
+    .tareas{
+        padding-bottom: 5%;
+    }
+    .logout{
+        border-top-width: 1px;
+        border-top-style: solid;
+    }
 }

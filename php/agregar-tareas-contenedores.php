@@ -21,6 +21,7 @@
                 'titulo' => $row['titulo'],
                 'descripcion' => $row['descripcion'],
                 'correo' => $row['correo'],
+                'fecha' => $row['fecha'],
                 'id_estado' => $row['id_estado'],
                 'id' => $row['id'],
             );
