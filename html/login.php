@@ -14,6 +14,7 @@
 
         <div class="container">
             <h2>Iniciar Sesión</h2>
+            
             <form class="login" method="post">
                 <div id="corre">
                     <label for="correo">Correo Electrónico:</label>

@@ -8,7 +8,6 @@ $(document).ready(function() {
 
     //agrega las tareas a la base de datos
     $('#form-tareas').submit(function(e){
-        //console.log('ENVIANDO');
 
         //se almacenan datos de formulario
         const postData = {
@@ -23,7 +22,7 @@ $(document).ready(function() {
         let url = editar === false ? '../php/agregar-tarea-bdd.php' : '../php/editar-tarea.php';
         console.log(url);
 
-        //console.log(postData);
+        
         //se envia para guardar en base de datos
         $.post(url, postData, function(response){
             console.log(response);
@@ -31,7 +30,7 @@ $(document).ready(function() {
             $('#form-tareas').trigger('reset');//resetea los campos
             modal.style.display = "none";//cierrra el formulario
         });
-        //e.preventDefault();
+        
     });
 
 

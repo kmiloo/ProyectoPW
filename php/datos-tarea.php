@@ -28,7 +28,7 @@
 
 
     }else{
-        echo 'id no econtroado';
+        
     }
 
 

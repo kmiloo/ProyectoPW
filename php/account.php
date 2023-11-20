@@ -16,14 +16,14 @@ if(isset($_SESSION['id'])){
         $sql = "UPDATE usuarios SET nombre = '$nombre', correo = '$correo', contrasena = '$contrasena', pais = '$pais' WHERE id = $id";
 
         if (mysqli_query($conex, $sql)) {
-            //echo "Datos actualizados con éxito.";
+            
             echo "<script>window.location.href = 'login.php';</script>";
         } else {
-            //echo "Error al actualizar los datos: " . mysqli_error($conexion);
+            
         }
     }
 } else {
-    // Manejar el caso en que el usuario no ha iniciado sesión o no tiene un ID en la sesión
+    
     echo "Usuario no autenticado.";
 }
 ?>

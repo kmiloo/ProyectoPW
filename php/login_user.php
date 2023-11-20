@@ -29,7 +29,9 @@ if(isset($_POST['login'])){
             exit();
         } else {
             // Las credenciales son incorrectas
-            echo "Credenciales incorrectas. Inténtalo de nuevo.";
+            ?>
+                <p style="color: rgb(217,48,37);">Credenciales incorrectas. Inténtalo de nuevo.</p>
+            <?php
         }
         
         

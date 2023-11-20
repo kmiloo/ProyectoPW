@@ -1,8 +1,6 @@
 $(document).ready(function() {
 
     const contenedores = document.querySelectorAll(".tareas");
-    
-
 
     // Manejar el movimiento de cartas entre contenedores
     contenedores.forEach((contenedor) => {
@@ -30,24 +28,10 @@ $(document).ready(function() {
             //id contenedor
             let id_estado= contenedor.children[1].id
 
-            //console.log(id, id_estado);
             $.post('../php/movimiento.php',{id,id_estado}, function (response) {
                 console.log(response); 
             })
-    
-            
-    
-    
         }
         });
     });
-  
-
-  
-    
-
-
-
-
-
 })

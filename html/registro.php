@@ -13,11 +13,9 @@
             </div>
 
         <div class="container">
-            
+            <h2>Crear cuenta</h2>
                 <form method="post">
-                    <?php
-                        include("../php/registrar_user.php");
-                    ?>
+                    
                     <label for="nombre">Nombre:</label>
                     <input type="text" id="nombre" name="nombre" placeholder="Tu nombre">
                     <div id="corre">
@@ -35,6 +33,9 @@
                         <option value="mx">México</option>
                         <option value="ar">Argentina</option>
                     </select>
+                    <?php
+                        include("../php/registrar_user.php");
+                    ?>
                     
                     <button type="submit" name="boton" >Registrarse</button>
                     
